@@ -1,0 +1,10 @@
+nav {
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background-color: #e50914;
+  border-radius: 0 0 22px 22px;
+}
+
+nav h1 {
+  font-weight: 600;
+}
