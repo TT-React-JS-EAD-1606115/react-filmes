@@ -49,9 +49,7 @@ export const Home = () => {
             <span>Carregando listagem de filmes...</span>
           </div>
         ) : (
-          films.map((film) => {
-            return <Card key={film.imdbID} film={film} />;
-          })
+          films.map((film) => <Card key={film.imdbID} film={film} />)
         )}
       </div>
     </>
