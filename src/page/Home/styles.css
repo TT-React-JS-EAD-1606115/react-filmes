@@ -4,3 +4,10 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 }
+
+.search-container {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  max-width: 20rem;
+}

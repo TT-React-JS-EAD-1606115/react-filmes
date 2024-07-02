@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { Details } from "./page/Details";
 import { Home } from "./page/Home";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
 
       <div className="body">
         <Home />
+        {/* <Details /> */}
       </div>
     </>
   );

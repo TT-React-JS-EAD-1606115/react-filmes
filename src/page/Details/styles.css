@@ -1,0 +1,38 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.film-section {
+  display: flex;
+  gap: 2rem;
+}
+
+.film-section img {
+  width: 350px;
+}
+
+.film-section h1 {
+  font-size: 36px;
+}
+
+.film-section .details .infos {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.film-section .details ul {
+  list-style: none;
+}
+
+.film-section .details ul li {
+  margin-top: 1rem;
+  font-size: 22px;
+}
+
+.plot {
+  font-size: 22px;
+  text-align: justify;
+}
