@@ -5,14 +5,20 @@ import "./styles.css";
 import { getFilmList } from "../../api/film";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { useSearchParams } from "react-router-dom";
 
 export const Home = () => {
   const [films, setFilms] = useState<Film[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [search, setSearch] = useState<string>("Hulk");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState<string>(
+    searchParams.get("query") || "Hulk"
+  );
 
   const handleSearchFilms = async () => {
     setIsLoading(true);
+
+    setSearchParams({ query: search });
 
     const response = await getFilmList(search);
 

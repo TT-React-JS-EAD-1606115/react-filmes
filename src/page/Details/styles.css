@@ -7,6 +7,7 @@
 .film-section {
   display: flex;
   gap: 2rem;
+  width: 100%;
 }
 
 .film-section img {
@@ -35,4 +36,14 @@
 .plot {
   font-size: 22px;
   text-align: justify;
+}
+
+.details .title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details {
+  width: 100%;
 }

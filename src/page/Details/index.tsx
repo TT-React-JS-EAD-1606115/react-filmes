@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Film } from "../../types/film";
 import "./styles.css";
 import { getFilmDetails } from "../../api/film";
 
 export const Details = () => {
   const [film, setFilm] = useState<Film>();
+  const params = useParams<{ id: string }>();
 
   const handleGetDetails = async () => {
-    const response = await getFilmDetails("tt0800080");
+    const response = await getFilmDetails(params.id);
 
     setFilm(response);
   };
 
   useEffect(() => {
     handleGetDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -24,7 +27,9 @@ export const Details = () => {
             <img src={film?.Poster} alt="poster" />
 
             <div className="details">
-              <h1>{film?.Title}</h1>
+              <div className="title-container">
+                <h1>{film?.Title}</h1>
+              </div>
 
               <div className="infos">
                 <ul>

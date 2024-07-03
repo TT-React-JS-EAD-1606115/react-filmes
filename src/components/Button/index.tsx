@@ -3,8 +3,13 @@ import "./styles.css";
 
 interface ButtonProps extends ComponentProps<"button"> {
   children?: ReactNode;
+  outline?: boolean;
 }
 
-export const Button = ({ children, ...rest }: ButtonProps) => {
-  return <button {...rest}>{children}</button>;
+export const Button = ({ children, outline, ...rest }: ButtonProps) => {
+  return (
+    <button className={outline ? "btn-outline" : ""} {...rest}>
+      {children}
+    </button>
+  );
 };

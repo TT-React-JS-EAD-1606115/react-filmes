@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Film } from "../../types/film";
 import "./styles.css";
 
@@ -6,11 +7,17 @@ interface CardProps {
 }
 
 export const Card = ({ film }: CardProps) => {
+  const navigate = useNavigate();
+
+  const handleNavigateToDetails = () => {
+    navigate(`/details/${film.imdbID}`);
+  };
+
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={handleNavigateToDetails}>
       <img src={film.Poster} alt="poster" />
 
-      <a href="#home">{film.Title}</a>
+      <p>{film.Title}</p>
 
       <span>Ano: {film.Year}</span>
       <span>ID: {film.imdbID}</span>

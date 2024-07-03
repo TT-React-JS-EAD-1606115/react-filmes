@@ -3,6 +3,9 @@ nav {
   padding: 1.25rem 2rem;
   background-color: #e50914;
   border-radius: 0 0 22px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav h1 {
