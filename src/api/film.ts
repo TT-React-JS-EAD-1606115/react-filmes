@@ -1,20 +1,25 @@
+import { api } from ".";
 import { Film, FilmList } from "../types/film";
-
-const baseURL = "https://www.omdbapi.com/?apikey=3295fc54";
 
 // Manutenibilidade
 export const getFilmDetails = async (filmId?: string): Promise<Film> => {
-  const response: Film = await fetch(`${baseURL}&plot=full&i=${filmId}`).then(
-    (res) => res.json()
-  );
+  // Fetch API do JS
+  // const response: Film = await fetch(`${baseURL}&plot=full&i=${filmId}`).then(
+  //   (res) => res.json()
+  // );
 
-  return response;
+  const response = await api.get<Film>(`?plot=full&i=${filmId}`);
+
+  return response.data;
 };
 
 export const getFilmList = async (search: string): Promise<FilmList> => {
-  const response: FilmList = await fetch(`${baseURL}&s=${search}`).then(
-    (result) => result.json()
-  );
+  //  Fetch API do JS
+  // const response: FilmList = await fetch(`${baseURL}&s=${search}`).then(
+  //   (result) => result.json()
+  // );
 
-  return response;
+  const response = await api.get<FilmList>(`?s=${search}`);
+
+  return response.data;
 };
